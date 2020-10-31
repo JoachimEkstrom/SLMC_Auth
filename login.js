@@ -13,8 +13,7 @@ router.post('/', function (req, res) {
         name: req.body.name,
         password: req.body.password
     }
-    res.sendStatus(200)
-    fetch(`${process.env.DBIP}${process.env.DBPORT}/users`, {
+    fetch(`${process.env.DBIP}/users`, {
         method: 'post',
         body:    JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },
